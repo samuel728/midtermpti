@@ -14,6 +14,11 @@ body {
     src: url("sponsfont.ttf");
 }
 
+#container {
+    justify-content: center;
+    align-items: center;
+}
+
 #prevbutton {
     justify-content: right;
     display: flex;
@@ -35,7 +40,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    border: 5px solid #014a7d ;
+    border: 5px solid #014a7d;
     border-color: #014a7d;
     border-radius: 35px;
 }
@@ -64,6 +69,12 @@ body {
     justify-content: left;
 }
 
+#charpick {
+    min-width: 20%;
+    width: 200px;
+    height: 200px;
+}
+
 #char{
     /*bikin width, height seukuran char*/
     justify-content: center;
@@ -72,5 +83,59 @@ body {
 }
 
 #inputpet{
-    width: 30%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 30%;
+}
+
+#inputpet .inputpetlabel {
+    color: #fef66e;
+    text-shadow: 0 0 3px #888609, 0 0 5px #6d7200;
+    font-size: 25px;
+}
+
+#inputpet .inputtextpet {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: #cccccc;
+    font-size: 1.2em;
+    text-align: center;
+    background-image: url("https://file.notion.so/f/s/ec5995f6-657d-464b-9654-7ae07729cf16/input.png?id=32739c43-9af4-4299-8daf-377b1af7965d&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680371148133&signature=yUF_DXxIMD_vWVIk0G0bmma4Rf6wzCgxLx_pG27Z4Lc&downloadName=input.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+.inputtextpet:focus {
+    outline: none;
+}
+
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: rgba(238, 238, 238, 0);
+}
+
+#play.container {
+    width: 300px;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#play .playbutton {
+    color: #014a7d;
+    padding: 10px;
+    text-shadow: -2px 2px 0 #53b7ff;
+    font-size: 30px;
+    border-radius: 70%;
+    background-color: #ffee00;
+    border-color: #014a7d;
+    box-shadow: 0 0 5px #253e5d73;
 }

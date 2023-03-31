@@ -6,6 +6,3 @@ function gantiGambar(jumlah) {
 indeksGambar = (indeksGambar + jumlah + sumberGambar.length) % sumberGambar.length;
 elemenGambar.src = sumberGambar[indeksGambar];}
 
-$(window).load(function() {
-	$(".loader").fadeOut("slow");
-})

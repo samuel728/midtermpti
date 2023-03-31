@@ -19,11 +19,6 @@ body {
     align-items: center;
 }
 
-#maincontainer {
-    justify-content: center;
-    align-items: center;
-}
-
 #prevbutton {
     justify-content: right;
     display: flex;
@@ -145,4 +140,10 @@ input {
     background-color: #ffee00;
     border-color: #014a7d;
     box-shadow: 0 0 5px #253e5d73;
+}
+
+#copyright {
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 5px;
 }

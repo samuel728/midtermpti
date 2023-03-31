@@ -1,6 +1,6 @@
 body {
     background-image : url("https://file.notion.so/f/s/395e1406-1a4e-4f8c-b36c-a8f288e086e1/background1.jpg?id=624ac8eb-f38a-4615-90d4-a85e208e92e9&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680357076757&signature=-hBgEPLyQe-GlX3CgwBzdxoIGUnyBsFtvo5uz_hxLX8&downloadName=background1.jpg");
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color : #cccccc;
     background-position:center;
@@ -8,10 +8,7 @@ body {
     min-height: 100vh;
  }
 
-hr.headerhr{
-    border: 2px solid rgb(0, 46, 96);
 
-}
 
 #prevbutton {
     justify-content: right;
@@ -34,13 +31,16 @@ hr.headerhr{
     top: 0;
     left: 0;
     z-index: 0;
+    border: 5px solid #014a7d ;
+    border-color: #014a7d;
+    border-radius: 35px;
 }
 
 #clogo .logo {
-    margin-top: 5px;
+    margin-top: 4px;
     position: absolute;
-    min-width: 80px;
-    max-width: 10%;
+    min-width: 120px;
+    max-width: 15%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

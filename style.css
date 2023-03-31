@@ -6,9 +6,13 @@ body {
     background-position:center;
     justify-content: center;
     min-height: 100vh;
+    font-family: "CustomFont", sans-serif;
  }
 
-
+ @font-face {
+    font-family: "CustomFont";
+    src: url("sponsfont.ttf");
+}
 
 #prevbutton {
     justify-content: right;
@@ -45,6 +49,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;  
+}
+
+#selectorchar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
 }
 
 #nextbutton{

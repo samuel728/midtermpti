@@ -33,6 +33,7 @@ html, body {
     display: flex;
     align-items: center;
     width: 20px;
+    color: #fef66e;
 }
 
 
@@ -52,7 +53,7 @@ html, body {
     z-index: 0;
     border: 5px solid #014a7d;
     border-color: #014a7d;
-    border-radius: 35px;
+    border-radius: 25px;
 }
 
 #clogo .logo {
@@ -78,6 +79,7 @@ html, body {
     align-items: center;
     justify-content: left;
     width: 20px;
+    color: #fef66e;
 }
 
 #charpick {

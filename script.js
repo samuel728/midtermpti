@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
+
 var sumberGambar = ["asset/baby_patrick.png", "asset/baby_squidward.png", "asset/baby_spongebob.png"];
 var indeksGambar = 0;
 var elemenGambar = document.getElementById("character");

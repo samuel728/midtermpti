@@ -1,31 +1,35 @@
 <!DOCTYPE html>
     <head>
         <title>UMN Gotcha</title>
-
+        <link rel="icon" type="image/x-icon" href="asset/logosquare.png">
         <div class="text-center mx-auto">
             <div class="container" id="clogo">
-            <img src="https://file.notion.so/f/s/efcc11aa-efe3-41a9-a5e5-1ee7e8e2c87d/header-no-border.png?id=2761c896-5964-4421-96cb-842b092dd620&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680367623034&signature=UelgJZU6s8m0uJ-AfGDM2N5cvifWvLHaXdt-WZhrUlc&downloadName=header-no-border.png" class="bglogo">
-            <img src="https://file.notion.so/f/s/37f1f4d2-8516-4ef6-a451-1d902fa9235c/logo.png?id=cee55431-2c3d-4d0f-958c-a0e540041c2b&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680357135014&signature=LGYT138OWiQrh0s5TrGWqYb4UswRD9de4_CbiRJeBu8&downloadName=logo.png" class="logo">
+            <img src="asset/header-no-border.png" class="bglogo">
+            <img src="asset/logo.png" class="logo">
         </div>
         </div>
         <br />
-
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="full-screen" content="yes"/>
         <meta charset="utf-8"> 
         <meta name="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <meta charset="utf-8" /> 
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0" /> 
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
         
     </head>
 
-    <body>
+    <body onload="showPopup()">
+        <div id="welcome-popup" class="popup">
+            <div class="popup-content">
+              <h1>Welcome!</h1>
+              <p>Please select your character.</p>
+              <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+          </div>          
         
         <div class="container" id="maincontainer">
             <div class="container" id="selectorchar">
@@ -37,7 +41,7 @@
                 </div>
                 <div class="container" id="charpick">
                 <div class="col" id="char">
-                    <img id="character" src="https://file.notion.so/f/s/39e49a80-ddbd-4687-a4ef-b145a3c73fe3/baby_patrick.png?id=2e551086-0686-4919-a660-c75e68c547a5&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680388757964&signature=mvi6raLN0VCB5OyMeQFyJi2Y6DbuTL3h12WowOUwNSs&downloadName=baby_patrick.png" class="img-fluid">
+                    <img id="character" src="asset/baby_patrick.png" class="img-fluid">
                 </div>
                 </div>
                 <div class="col" id="nextbutton">
@@ -49,10 +53,10 @@
             </div>
 
             <br>
-
+            <form id="formname">
             <div class="container" id="inputpet">
                 <label for="exampleFormControlInput1" id="inputpetlabel" class="inputpetlabel">Enter Pet Name Here...</label>
-                <input type="text" class="inputtextpet" id="exampleFormControlInput1" maxlength="13" placeholder="Pet Name...">
+                <input type="text" class="inputtextpet" id="petnameid" maxlength="13" placeholder="Pet Name...">
             </div>
             
             <br>
@@ -60,6 +64,7 @@
             <div class="container" id="play">
                 <button type="submit" class="playbutton">  &#9654 Play  </button>
             </div>
+            </form>
             <p id="copyright"> Ⓒ UMN Gocha 2023</p>
         </div>
             <script src="script.js"></script>
@@ -69,4 +74,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<footer>
+        <div class="footer">
+            <a href="#">About</a> <a href="#">| Terms & Conditions</a>
+          </div>
+</footer> 
 </html>

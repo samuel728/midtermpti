@@ -1,11 +1,11 @@
 body {
-    background-image : url("https://file.notion.so/f/s/395e1406-1a4e-4f8c-b36c-a8f288e086e1/background1.jpg?id=624ac8eb-f38a-4615-90d4-a85e208e92e9&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680357076757&signature=-hBgEPLyQe-GlX3CgwBzdxoIGUnyBsFtvo5uz_hxLX8&downloadName=background1.jpg");
-    background-size: cover;
+    background-image : url("asset/background1.jpg");
+    background-size:cover;
     background-repeat: no-repeat;
     background-color : #cccccc;
     background-position:center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 100vh !important;
     font-family: "CustomFont", sans-serif;
  }
 
@@ -13,6 +13,16 @@ body {
     font-family: "CustomFont";
     src: url("sponsfont.ttf");
 }
+
+html, body {
+    overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
 
 #container {
     justify-content: center;
@@ -99,15 +109,15 @@ body {
 }
 
 #inputpet .inputtextpet {
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 20px;
     color: #cccccc;
     font-size: 1.2em;
     text-align: center;
-    background-image: url("https://file.notion.so/f/s/ec5995f6-657d-464b-9654-7ae07729cf16/input.png?id=32739c43-9af4-4299-8daf-377b1af7965d&table=block&spaceId=a87e2f9d-141a-403a-ab4f-5c8145dcc9fa&expirationTimestamp=1680371148133&signature=yUF_DXxIMD_vWVIk0G0bmma4Rf6wzCgxLx_pG27Z4Lc&downloadName=input.png");
+    background-image: url("asset/input.png");
     background-size: 80%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
 }
 
 
@@ -133,13 +143,15 @@ input {
 
 #play .playbutton {
     color: #014a7d;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     text-shadow: -2px 2px 0 #53b7ff;
     font-size: 30px;
-    border-radius: 70%;
     background-color: #ffee00;
-    border-color: #014a7d;
-    box-shadow: 0 0 5px #253e5d73;
+    border-color: -2px 2px 0 #014a7d;
+    box-shadow: -4px 4px 0 #253e5d;
 }
 
 #copyright {
@@ -147,3 +159,83 @@ input {
     text-align: center;
     padding-bottom: 5px;
 }
+
+a {
+    color: #2f2f2f;
+    font-size: small;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    color: whitesmoke;
+    padding-left: 5px;
+  }
+  
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: underline;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.popup-content {
+    background-image: url("asset/prompt.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 80px;
+    text-align: center;
+    border-radius: 10px;
+}
+  
+h1 {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    text-shadow: -2px 2px 0 #003357, 2px 2px 0 #003357, 2px -2px 0 #003357, -2px -2px 0 #003357, 0 2px 0 #003357, 0px -2px 0 #003357;
+}
+  
+p {
+    font-size: 18px;
+    color: #fef66e;
+    margin-top: 20px;
+    text-shadow: -2px 2px 0 #003357, 2px 2px 0 #003357, 2px -2px 0 #003357, -2px -2px 0 #003357, 0 2px 0 #003357, 0px -2px 0 #003357;
+}
+  
+.close-btn {
+    color: #014a7d;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-shadow: -2px 2px 0 #53b7ff;
+    font-size: 20px;
+    background-color: #ffee00;
+    border-color: -1.5px 1.5px 0 #014a7d;
+    box-shadow: -4px 4px 0 #253e5d;
+}
+  

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <p>Hello World!</p>
+    </head>
+    <body>
+        <div id="myInput"></div>
+        <div id="clock"></div>
+    </body>
+    <script>
+    var startTime = new Date().getTime(); // Waktu awal saat halaman dimuat
+    var hours = new Date().getHours();
+    var minutes = new Date().getMinutes();
+
+    var timeString = padNumber(hours) + ":" + padNumber(minutes);
+    document.getElementById("clock").innerHTML = timeString;
+
+  
+    function updateTime() {
+    var now = new Date();
+    var currentTime = now.getTime(); // Waktu sekarang
+    var elapsedTime = (currentTime - startTime) / 1000; // Waktu yang telah berlalu dalam detik
+    var elapsedMinutes = Math.floor(elapsedTime / 60); // Menit yang telah berlalu
+    var elapsedHours = Math.floor(elapsedMinutes / 60); // Jam yang telah berlalu
+    
+    // Menambahkan 1 jam setelah 1 menit berganti
+    if (elapsedMinutes % 1 === 0) {
+      hours++;
+    }
+    
+    // Menampilkan waktu pada halaman
+    var timeString = padNumber(hours % 24) + ":" + padNumber(minutes);
+    document.getElementById("clock").innerHTML = timeString;
+    }
+
+    function padNumber(number) {
+    return ("0" + number).slice(-2);
+  }
+
+    setInterval(updateTime, 60000); // Mengulang fungsi updateTime setiap 1 detik
+
+    </script>
+</html>

@@ -4,14 +4,24 @@ var elemenGambar = document.getElementById("character");
 
 function gantiGambar(jumlah) {
 indeksGambar = (indeksGambar + jumlah + sumberGambar.length) % sumberGambar.length;
-elemenGambar.src = sumberGambar[indeksGambar];
-}
+elemenGambar.src = sumberGambar[indeksGambar];}
+
+var myAudio = document.getElementById("theme");
+myAudio.play();
+
+const audio = new Audio('asset/theme.mp3');
+audio.loop = true;
+
+const closeButton = document.querySelector('.close-btn');
+closeButton.addEventListener('click', function() {
+  audio.play();
+});
 
 function showPopup() {
     document.getElementById("welcome-popup").style.display = "flex";
-}
+    }
   
-function closePopup() {
+  function closePopup() {
     document.getElementById("welcome-popup").style.display = "none";
 }
 

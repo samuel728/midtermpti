@@ -14,6 +14,12 @@ body {
     src: url("sponsfont.ttf");
 }
 
+@media (max-width: 768px) {
+    #close-btn {
+      display: none;
+    }
+  }
+
 html, body {
     touch-action: none;
     -ms-touch-action: none;

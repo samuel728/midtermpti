@@ -21,6 +21,14 @@ closeButton.addEventListener('click', function() {
 const closeBtn = document.querySelector('.close-btn');
 
 closeBtn.addEventListener('click', () => {
+    // Memeriksa apakah browser merupakan perangkat mobile
+    if (window.innerWidth <= 768) {
+      alert('Maaf, mode full screen tidak didukung pada perangkat mobile.');
+      return;
+    }
+});
+
+closeBtn.addEventListener('click', () => {
   const element = document.documentElement;
 
   if (element.requestFullscreen) {

@@ -9,36 +9,33 @@
         <div id="clock"></div>
     </body>
     <script>
-    var startTime = new Date().getTime(); // Waktu awal saat halaman dimuat
-    var hours = new Date().getHours();
-    var minutes = new Date().getMinutes();
-
-    var timeString = padNumber(hours) + ":" + padNumber(minutes);
-    document.getElementById("clock").innerHTML = timeString;
-
-  
-    function updateTime() {
+window.onload = function() {
     var now = new Date();
-    var currentTime = now.getTime(); // Waktu sekarang
-    var elapsedTime = (currentTime - startTime) / 1000; // Waktu yang telah berlalu dalam detik
-    var elapsedMinutes = Math.floor(elapsedTime / 60); // Menit yang telah berlalu
-    var elapsedHours = Math.floor(elapsedMinutes / 60); // Jam yang telah berlalu
-    
-    // Menambahkan 1 jam setelah 1 menit berganti
-    if (elapsedMinutes % 1 === 0) {
-      hours++;
-    }
-    
-    // Menampilkan waktu pada halaman
-    var timeString = padNumber(hours % 24) + ":" + padNumber(minutes);
-    document.getElementById("clock").innerHTML = timeString;
-    }
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
 
+    function updateTime() {
+        // Menambahkan 1 menit setelah 1 detik berganti
+        if (new Date().getSeconds() % 1 === 0) {
+            minutes++;
+        }
+        
+        // Menambahkan 1 jam setelah 59 menit berganti
+        if (minutes % 60 === 0 && new Date().getSeconds() % 1 === 0) {
+            hours++;
+        }
+        
+        // Menampilkan waktu pada halaman
+        var timeString = padNumber(hours % 24) + ":" + padNumber(minutes % 60);
+        document.getElementById("clock").innerHTML = timeString;
+    }
+    
     function padNumber(number) {
-    return ("0" + number).slice(-2);
-  }
-
-    setInterval(updateTime, 60000); // Mengulang fungsi updateTime setiap 1 detik
+        return ("0" + number).slice(-2);
+    }
+    
+    setInterval(updateTime, 1000); // Mengulang fungsi updateTime setiap 1 detik
+}
 
     </script>
 </html>

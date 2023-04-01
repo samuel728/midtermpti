@@ -4,13 +4,14 @@ var elemenGambar = document.getElementById("character");
 
 function gantiGambar(jumlah) {
 indeksGambar = (indeksGambar + jumlah + sumberGambar.length) % sumberGambar.length;
-elemenGambar.src = sumberGambar[indeksGambar];}
+elemenGambar.src = sumberGambar[indeksGambar];
+}
 
 function showPopup() {
     document.getElementById("welcome-popup").style.display = "flex";
-    }
+}
   
-  function closePopup() {
+function closePopup() {
     document.getElementById("welcome-popup").style.display = "none";
 }
 

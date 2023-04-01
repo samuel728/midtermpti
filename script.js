@@ -30,6 +30,7 @@ closeBtn.addEventListener('click', () => {
   } else if (element.msRequestFullscreen) {
     element.msRequestFullscreen();
   }
+  window.scrollTo(0, 0);
 });
 
 

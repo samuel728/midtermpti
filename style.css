@@ -6,12 +6,13 @@ body {
     background-position:center;
     justify-content: center;
     min-height: 100vh !important;
+    min-width: 100%;
     font-family: "CustomFont", sans-serif;
  }
 
  @font-face {
     font-family: "CustomFont";
-    src: url("sponsfont.ttf");
+    src: url("asset/sponsfont.ttf");
 }
 
 @media (max-width: 768px) {
@@ -32,6 +33,7 @@ html, body {
 #container {
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #prevbutton {
@@ -40,8 +42,22 @@ html, body {
     align-items: center;
     width: 20px;
     color: #fef66e;
+    font-size: 3em;
 }
 
+#rbutton{
+    background-image: url("asset/arrow-right.png");
+    background-size: 80%;
+    background-position:left;
+    background-repeat: no-repeat;
+}
+
+#lbutton{
+    background-image: url("asset/arrow-left.png");
+    background-size: 80%;
+    background-position:right;
+    background-repeat: no-repeat;
+}
 
 #clogo {
     position: relative;
@@ -50,7 +66,6 @@ html, body {
 }
 
 #clogo .bglogo {
-    margin-top: 10px;
     position: relative;
     width: 100%;
     min-height: 100px;
@@ -94,11 +109,19 @@ html, body {
     height: 200px;
 }
 
-#char{
+#charcontainer {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 250px;
+}
+
+#char img{
     /*bikin width, height seukuran char*/
     justify-content: center;
     display: flex;
     align-items: center;
+    height: 200px;
 }
 
 #inputpet{
@@ -216,7 +239,7 @@ a:link {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 80px;
+    padding: 90px;
     text-align: center;
     border-radius: 10px;
 }
@@ -247,13 +270,208 @@ p {
     box-shadow: -4px 4px 0 #253e5d;
 }
   
+/* BATAS WELCOME  */
+/*----------------------------------------------------------------------------*/
+/* START MAIN */
+
+#greetpopup {
+    width:250px;
+    position: relative;
+}
+
+#clogo .mbglogo {
+    position: relative;
+    width: 90%;
+    min-height: 70px;
+    max-height: 90px;
+    top: 5px;
+    left: 0;
+    z-index: 0;
+    border: 5px solid #014a7d;
+    border-color: #014a7d;
+    border-radius: 25px;
+}
+
+#clogo .mlogo {
+    margin-top: 4px;
+    position: absolute;
+    min-width: 120px;
+    max-width: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;  
+}
+
+#statscontainer {
+    max-height: 200px;
+    margin-top: -20px;
+    max-width: 300px;
+    padding-top: 10px;
+    width: 80%;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#statscontainer .table {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: -10px;
+    background-image: url("asset/statsbackground.png");
+    background-size: 300%;
+    background-position: center;
+    border: 5px solid rgb(79, 50, 0);
+    border-radius: 10px;
+    /*border-left: 5px solid rgb(79, 50, 0);
+    border-bottom: 5px solid rgb(79, 50, 0);
+    border-right: 5px solid rgb(79, 50, 0);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
+
+}
+
+#colstats {
+    color: white;
+    width: 80px;
+    display: flex;
+}
+
+#rowstats {
+    border: 0px;
+}
+
+#csicon {
+    width:30px;
+}
 
 
+#statsicon {
+    height:30px;
+    border-radius: 50px;
+    background-color:#2f2f2f;
+}
 
+#statbar {
+    width: 80px;
+    height: 15px;
+    border: 3px solid rgb(4, 50, 121);
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    margin-left: 4px;
+    z-index: 0;
+  }
 
+  #bar-food {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(64, 166, 73);
+    border-radius: 2px;
+  }
+  
+  #bar-food.low {
+    background-color: red;
+    animation: blink 1s linear infinite;
+  }
+  
+  #bar-health {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
+  
+  #bar-health.low {
+    background-color: red;
+    animation: blink 1s linear infinite;
+  }
+  
+  #bar-sleep {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
+  
+  #bar-sleep.low {
+    background-color: red;
+    animation: blink 1s linear infinite;
+  }
+  
+  #bar-play {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
+  
+  #bar-play.low {
+    background-color: red;
+    animation: blink 1s linear infinite;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
+#greetingcontainer {
+    color: #fef66e;
+    margin-top: -16px;
+    text-shadow: 0 0 3px #888609, 0 0 5px #6d7200;
+    font-size: 3.3vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 
+#chardiv {
+    height: 250px;
+    max-height:70% ;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
 
+#buttoncont {
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  #btndiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+
+#btndiv .buttonbtn {
+    color: #014a7d;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-shadow: -1px 1px 0 #53b7ff;
+    font-size: 15px;
+    background-color: #ffee00;
+    border-color: -2px 2px 0 #014a7d;
+    box-shadow: -3px 3px 0 #253e5d;
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 100px;
+    height: 40px;
+}
 
 #background-wrap {
     bottom: 0;

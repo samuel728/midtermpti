@@ -1,41 +1,141 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <p>Hello World!</p>
+        <title>UMN Gotcha</title>
+        <link rel="icon" type="image/x-icon" href="asset/logosquare.png">
+        <div class="text-center mx-auto">
+            <div class="container" id="clogo">
+            <img src="asset/header-no-border.png" class="mbglogo">
+            <img src="asset/logo.png" class="mlogo">
+        </div>
+        </div>
+        <br />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="full-screen" content="yes"/>
+        <meta charset="utf-8"> 
+        <meta name="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
     </head>
-    <body>
-        <div id="textContent"></div>
-        <div id="clock"></div>
+
+    <body onload="showPopup()">
+        <audio id="theme" autoplay>
+            <source src="asset/theme.mp3" type="audio/mpeg">
+          </audio>
+        <div id="welcome-popup" class="popup">
+            <div class="popup-content">
+              <h1>Hi !</h1>
+              <div id="greetpopup"></div>
+              <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+          </div>          
+        
+        <div class="container" id="statscontainer">
+            <div class="table" id="statstid">
+                <div class="row" id="rowstats">
+                    <div class="col" id="colstats">
+                        <div id="csicon">
+                        <img id="statsicon" src="asset/icon-eat.png">
+                        </div>
+                        <div id="csbar">
+                        <div id="statbar">
+                            <div id="bar-food" style="width: 50%"></div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col" id="colstats">
+                        <div id="csicon">
+                            <img id="statsicon" src="asset/icon-health.png">
+                            </div>
+                            <div id="csbar">
+                            <div id="statbar">
+                                <div id="bar-health" style="width: 50%"></div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="rowstats">
+                    <div class="col" id="colstats">
+                        <div id="csicon">
+                            <img id="statsicon" src="asset/icon-play.png">
+                            </div>
+                            <div id="csbar">
+                            <div id="statbar">
+                                <div id="bar-play" style="width: 50%"></div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col" id="colstats">
+                    <div id="csicon">
+                            <img id="statsicon" src="asset/icon-sleep.png">
+                            </div>
+                            <div id="csbar">
+                            <div id="statbar">
+                                <div id="bar-sleep" style="width: 50%"></div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="rowstats">
+                    <div id="levelinfo" style="text-align:center; margin-top: -10px;">Semester 1</div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="greetingcontainer">
+            <div id="greeting"></div>
+            <div id="clock"></div>
+        </div>
+
+        <!--charcontainer-->
+        <div class="container" id="charcontainer">
+            <div id="char"></div>
+        </div>
+
+        <!-- TOMBOL -->
+        <div class="container" id="buttoncont">
+            <div class="row row-cols-2 row-cols-lg-4" id="btndiv">
+                <div class="col">
+                    <button class="buttonbtn" id="food-btn">Food</button>
+                </div>
+                <div class="col">
+                    <button class="buttonbtn" id="sleep-btn">Sleep</button>
+                </div>
+                <div class="col">
+                    <button class="buttonbtn" id="play-btn">Play</button>
+                </div>
+                <div class="col">
+                    <button class="buttonbtn" id="health-btn">Health</button>
+                </div>
+            </div>
+        </div>
+
+            <!--<p id="copyright"> Ⓒ UMN Gotcha 2023</p>-->
+            <script src="script.js"></script>
+            <div id="background-wrap">
+                <div class="bubble x1"></div>
+                <div class="bubble x2"></div>
+                <div class="bubble x3"></div>
+                <div class="bubble x4"></div>
+                <div class="bubble x5"></div>
+                <div class="bubble x6"></div>
+                <div class="bubble x7"></div>
+                <div class="bubble x8"></div>
+                <div class="bubble x9"></div>
+                <div class="bubble x10"></div>
+            </div>
+            
     </body>
-    <script>
-window.onload = function() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-
-    function updateTime() {
-        // Menambahkan 1 menit setelah 1 detik berganti
-        if (new Date().getSeconds() % 1 === 0) {
-            minutes++;
-        }
-        
-        // Menambahkan 1 jam setelah 59 menit berganti
-        if (minutes % 60 === 0 && new Date().getSeconds() % 1 === 0) {
-            hours++;
-        }
-        
-        // Menampilkan waktu pada halaman
-        var timeString = padNumber(hours % 24) + ":" + padNumber(minutes % 60);
-        document.getElementById("clock").innerHTML = timeString;
-    }
-    
-    function padNumber(number) {
-        return ("0" + number).slice(-2);
-    }
-    
-    setInterval(updateTime, 1000); // Mengulang fungsi updateTime setiap 1 detik
-}
-
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <footer>
+        <div class="footer">
+            <a href="#"> About </a><a href="#">| Terms & Conditions </a>
+          </div>
+</footer> 
 </html>

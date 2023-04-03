@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
   closeButton.addEventListener('click', function() {
     audio.play();
   });
-  
+
   if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile/i.test(navigator.userAgent)) {
       document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=portrait">');
     }
@@ -145,13 +145,14 @@ elemenGambar.src = sumberGambar[indeksGambar];}
         window.location.href = './main.html';
     }
      // Check if we are on file2.html
-    if (window.location.href.includes('file2.html')) {
+    if (window.location.href.includes('./main.html')) {
     // Get the input value from localStorage
     const inputValue = localStorage.getItem('myInputValue');
     localStorage.removeItem("hours");
     localStorage.removeItem("minutes");
     localStorage.removeItem("hoursplayed");
     localStorage.removeItem("gamemins");
+    localStorage.removeItem("countgame");
     
     // Set the text content of the container to the saved input value
     const inputContainer = document.getElementById('myInputContainer');
@@ -450,11 +451,11 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //spongebob
     if(typechar == 0){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "<img src='asset/eat_spongebob.gif'>"; //spongebob1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen-eat.gif'>"; //spongebob1
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "<img src='asset/eat_spongebob.gif'>"; //spongebob2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen-eat.gif'>"; //spongebob2
       }else{
-        document.getElementById("char").innerHTML = "<img src='asset/eat_spongebob.gif'>"; //spongebob3 
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen-eat.gif'>"; //spongebob3 
       }
       setTimeout(function() {
         if (currlevel == 1){

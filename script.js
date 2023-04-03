@@ -225,7 +225,7 @@ elemenGambar.src = sumberGambar[indeksGambar];}
       }
       
       localStorage.setItem("level", level);
-      document.getElementById("levell").innerHTML = "level sekarang : " + level;
+      document.getElementById("levell").innerHTML = "Level : " + level;
      
       localStorage.setItem("hoursplayed", hoursplayed);
       localStorage.setItem("gamemins", gamemins);
@@ -262,6 +262,26 @@ elemenGambar.src = sumberGambar[indeksGambar];}
   }
   
   startchar();
+
+  document.getElementById("atas").addEventListener("click", function(){
+    var event = new KeyboardEvent('keydown', {'keyCode':38});
+    document.dispatchEvent(event);
+  });
+  
+  document.getElementById("bawah").addEventListener("click", function(){
+    var event = new KeyboardEvent('keydown', {'keyCode':40});
+    document.dispatchEvent(event);
+  });
+  
+  document.getElementById("kiri").addEventListener("click", function(){
+    var event = new KeyboardEvent('keydown', {'keyCode':37});
+    document.dispatchEvent(event);
+  });
+  
+  document.getElementById("kanan").addEventListener("click", function(){
+    var event = new KeyboardEvent('keydown', {'keyCode':39});
+    document.dispatchEvent(event);
+  });
   
   function updateFoodBar() {
     const bar = document.getElementById("bar-food");
@@ -324,8 +344,9 @@ elemenGambar.src = sumberGambar[indeksGambar];}
       health--;
     }
     if (health <= 0) {
-      /*alert("Game Over");*/
+      alert("Game Over");
       localStorage.clear();
+      window.location.href = './welcome.html';
     }
     updateHealthBar();
   }
@@ -352,19 +373,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //spongebob
     if(typechar == 0){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "spongebob1heal"; //spongebob1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob1 harusnya heal
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "spongebob2heal"; //spongebob2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob2
       }else{
-        document.getElementById("char").innerHTML = "spongebob3heal"; //spongebob3 
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob3 
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_spongebob.png'>"; //spongebob1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "spongebob2"; //spongebob2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob2eat
         }else{
-          document.getElementById("char").innerHTML = "spongebob3"; //spongebob2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob2eat
         }
       }, 3000);
     }
@@ -372,19 +393,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //patrick
     else if(typechar == 1){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "patrick1heal"; //patrick1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick1 harusnya heal
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "patrick2heal"; //patrick2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick2
       }else{
-        document.getElementById("char").innerHTML = "patrick3heal"; //patrick3
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick3
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_patrick.png'>"; //patrick1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "patrick2"; //patrick2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick2eat
         }else{
-          document.getElementById("char").innerHTML = "patrick3"; //patrick3eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick3eat
         }
       }, 3000);
     }
@@ -392,19 +413,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //squidward
     else{
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "squidward1heal"; //squidward1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward1 harusnya heal
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "squidward2heal"; //squidward2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward2
       }else{
-        document.getElementById("char").innerHTML = "squidward3heal"; //squidward3
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward3
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_squidward.png'>"; //squidward1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "squidward2"; //squidward2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward2eat
         }else{
-          document.getElementById("char").innerHTML = "squidward3"; //squidward3eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward3eat
         }
       }, 3000);
     }
@@ -439,9 +460,9 @@ elemenGambar.src = sumberGambar[indeksGambar];}
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_spongebob.png'>"; //spongebob1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "spongebob2"; //spongebob2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob2eat
         }else{
-          document.getElementById("char").innerHTML = "spongebob3"; //spongebob2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-adult.gif'>"; //spongebob2eat
         }
       }, 3000);
     }
@@ -449,19 +470,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //patrick
     else if(typechar == 1){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "patrick1eat"; //patrick1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-teen-eat.gif'>"; //patrick1
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "patrick2eat"; //patrick2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-teen-eat.gif'>"; //patrick2
       }else{
-        document.getElementById("char").innerHTML = "patrick3eat"; //patrick3
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-teen-eat.gif'>"; //patrick3
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_patrick.png'>"; //patrick1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "patrick2"; //patrick2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick2eat
         }else{
-          document.getElementById("char").innerHTML = "patrick3"; //patrick3eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick3eat
         }
       }, 3000);
     }
@@ -469,19 +490,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //squidward
     else{
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "squidward1eat"; //squidward1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-eat.gif'>"; //squidward1
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "squidward2eat"; //squidward2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-eat.gif'>"; //squidward2
       }else{
-        document.getElementById("char").innerHTML = "squidward3eat"; //squidward3
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-eat.gif'>"; //squidward3
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_squidward.png'>"; //squidward1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "squidward2"; //squidward2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward2eat
         }else{
-          document.getElementById("char").innerHTML = "squidward3"; //squidward3eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward3eat
         }
       }, 3000);
     }
@@ -502,19 +523,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //spongebob
     if(typechar == 0){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "spongebob1sleep"; //spongebob1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen-sleep.gif'>"; //spongebob1
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "spongebob2sleep"; //spongebob2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen-sleep.gif'>"; //spongebob2
       }else{
-        document.getElementById("char").innerHTML = "spongebob3sleep"; //spongebob3 
+        document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen-sleep.gif'>"; //spongebob3 
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_spongebob.png'>"; //spongebob1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "spongebob2"; //spongebob2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob2eat
         }else{
-          document.getElementById("char").innerHTML = "spongebob3"; //spongebob2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-spongebob-teen.gif'>"; //spongebob2eat
         }
       }, 3000);
     }
@@ -522,19 +543,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //patrick
     else if(typechar == 1){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "patrick1sleep"; //patrick1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-teen-sleep.gif'>"; //patrick1
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "patrick2sleep"; //patrick2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-teen-sleep.gif'>"; //patrick2
       }else{
-        document.getElementById("char").innerHTML = "patrick3sleep"; //patrick3
+        document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-teen-sleep.gif'>"; //patrick3
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_patrick.png'>"; //patrick1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "patrick2"; //patrick2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick2eat
         }else{
-          document.getElementById("char").innerHTML = "patrick3"; //patrick3eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-patrick-play.gif'>"; //patrick3eat
         }
       }, 3000);
     }
@@ -542,19 +563,19 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //squidward
     else{
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "squidward1sleep"; //squidward1
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward1 hrsnya sleep
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "squidward2sleep"; //squidward2
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward2
       }else{
-        document.getElementById("char").innerHTML = "squidward3sleep"; //squidward3
+        document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward3
       }
       setTimeout(function() {
         if (currlevel == 1){
           document.getElementById("char").innerHTML = "<img src='asset/baby_squidward.png'>"; //squidward1eat
         }else if(currlevel == 2){
-          document.getElementById("char").innerHTML = "squidward2"; //squidward2eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward2eat
         }else{
-          document.getElementById("char").innerHTML = "squidward3"; //squidward3eat
+          document.getElementById("char").innerHTML = "<img src='asset/gif-squidward-play.gif'>"; //squidward3eat
         }
       }, 3000);
     }
@@ -584,6 +605,7 @@ elemenGambar.src = sumberGambar[indeksGambar];}
         document.getElementById("char").style.display = "none";
         document.getElementById("buttoncont").style.display = "none";
         document.getElementById("greetingcontainer").style.display = "none";
+        document.getElementById("controller").style.display = "block";
         count++;
         minigame();
       } else {
@@ -592,7 +614,7 @@ elemenGambar.src = sumberGambar[indeksGambar];}
         document.getElementById("char").style.display = "none";
         document.getElementById("buttoncont").style.display = "none";
         document.getElementById("greetingcontainer").style.display = "none";
-     
+        document.getElementById("controller").style.display = "block";
       }
     }
   }
@@ -732,6 +754,8 @@ if (score === 5) {
       document.getElementById("char").style.display = "block";
       document.getElementById("buttoncont").style.display = "block";
       document.getElementById("greetingcontainer").style.display = "none";
+      document.getElementById("controller").style.display = "none";
+      play++;
       play++;
       play++;
       play++;

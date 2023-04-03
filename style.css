@@ -476,7 +476,7 @@ p {
 }
 
 #score {
-    margin-top: 500px;
+    margin-top: -230px;
     font-size: 18px;
     color: #fef66e;
     text-shadow: -2px 2px 0 #003357, 2px 2px 0 #003357, 2px -2px 0 #003357, -2px -2px 0 #003357, 0 2px 0 #003357, 0px -2px 0 #003357;
@@ -486,10 +486,15 @@ p {
 
 table {
     border-collapse: collapse;
-    border: 1px solid black;
-    background-color: #53b7ff;
+    border: 4px solid rgb(41, 153, 147);
+    border-radius: 25px;
+    background-image: url("asset/gamebg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
     position: absolute;
-    margin-top: 100px;
+    margin-top: 80px;
+    scale: 0.8;
   }
   td {
     width: 50px;
@@ -498,18 +503,68 @@ table {
   }
 
     .snake {
-background-image: url("asset/logo.png");
+background-image: url("asset/jellynet.png");
 background-size: 100%;
 background-repeat: no-repeat;
 background-position: center;
 
 }     
   .food {
-    background-image: url("asset/icon-sleep.png");
+    background-image: url("asset/jellyfish.gif");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
   }
+
+#controller {
+    margin-top: 450px;
+    background-color: #2f2f2f51;
+    border-radius: 80px;
+}
+
+#atas {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    background-image: url("asset/up@0.3x.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bawah {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    background-image: url("asset/down@0.3x.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#kanan {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    background-image: url("asset/right@0.3x.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#kiri {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    background-image: url("asset/left@0.3x.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 #background-wrap {
     bottom: 0;

@@ -421,7 +421,7 @@ p {
 
 #greetingcontainer {
     color: #fef66e;
-    margin-top: -16px;
+    margin-top: 20px;
     text-shadow: 0 0 3px #888609, 0 0 5px #6d7200;
     font-size: 3.3vh;
     text-align: center;
@@ -429,12 +429,14 @@ p {
     align-items: center;
 }
 
-#chardiv {
+#charcontainer {
     height: 250px;
     max-height:70% ;
     align-items: center;
     justify-content: center;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #buttoncont {
@@ -472,6 +474,42 @@ p {
     width: 100px;
     height: 40px;
 }
+
+#score {
+    margin-top: 500px;
+    font-size: 18px;
+    color: #fef66e;
+    text-shadow: -2px 2px 0 #003357, 2px 2px 0 #003357, 2px -2px 0 #003357, -2px -2px 0 #003357, 0 2px 0 #003357, 0px -2px 0 #003357;
+    position: absolute;
+    z-index: 10;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: #53b7ff;
+    position: absolute;
+    margin-top: 100px;
+  }
+  td {
+    width: 50px;
+    height: 50px;
+   
+  }
+
+    .snake {
+background-image: url("asset/logo.png");
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: center;
+
+}     
+  .food {
+    background-image: url("asset/icon-sleep.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
 #background-wrap {
     bottom: 0;

@@ -199,7 +199,7 @@ elemenGambar.src = sumberGambar[indeksGambar];}
 
   
       if(hours % 24 >=23){
-        document.getElementById("greeeting").innerHTML = 'Waktunya Tidur, ' + myInputValue;
+        document.getElementById("greeting").innerHTML = 'Waktunya Tidur, ' + myInputValue;
       }else if(hours % 24>=18){
         document.getElementById("greeting").innerHTML = 'Selamat Malam, ' + myInputValue;
       }else if(hours % 24>=15){
@@ -324,7 +324,7 @@ elemenGambar.src = sumberGambar[indeksGambar];}
       health--;
     }
     if (health <= 0) {
-      alert("Game Over");
+      /*alert("Game Over");*/
       localStorage.clear();
     }
     updateHealthBar();
@@ -338,14 +338,12 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     updatePlayBar();
   }
   
-  function startTimer() {
-    intervalId = setInterval(reduceFood, 7000); //bbalikin ke 7000
-    intervalId = setInterval(reduceSleep, 60000); //60000
-    intervalId = setInterval(reduceHealth, 10000);//15000
-    intervalId = setInterval(reducePlay, 15000);//15000
-    
-  
-  }
+ function startTimer() {
+    intervalId = setInterval(reduceFood, 17000); //bbalikin ke 7000
+    intervalId = setInterval(reduceSleep, 20000); //60000
+    intervalId = setInterval(reduceHealth, 30000);//15000
+    intervalId = setInterval(reducePlay, 45000);//15000
+}
   
   document.getElementById("health-btn").addEventListener("click", function() {
     var typechar = localStorage.getItem("chartype");
@@ -431,11 +429,11 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     //spongebob
     if(typechar == 0){
       if (currlevel == 1){
-        document.getElementById("char").innerHTML = "spongebob1eat"; //spongebob1
+        document.getElementById("char").innerHTML = "<img src='asset/eat_spongebob.gif'>"; //spongebob1
       }else if(currlevel == 2){
-        document.getElementById("char").innerHTML = "spongebob2eat"; //spongebob2
+        document.getElementById("char").innerHTML = "<img src='asset/eat_spongebob.gif'>"; //spongebob2
       }else{
-        document.getElementById("char").innerHTML = "spongebob3eat"; //spongebob3 
+        document.getElementById("char").innerHTML = "<img src='asset/eat_spongebob.gif'>"; //spongebob3 
       }
       setTimeout(function() {
         if (currlevel == 1){
@@ -568,20 +566,223 @@ elemenGambar.src = sumberGambar[indeksGambar];}
     
   });
   
+  startTimer();
+  
+  
+  //-------------------------------------------------------------------------------------------------------------
+
+
+  let count = 0;
   document.getElementById("play-btn").addEventListener("click", function() {
     if (sleep <=3 || food <= 3){
       var myInputValue = localStorage.getItem('myInputValue');
       alert(myInputValue + " kekurangan energi untuk bermain. beri dia makan atau beri dia waktu untuk tidur!");
     }else{
-      window.location.href = './snakefinal.html';
-      clearInterval(intervalId);
-      if (window.location.href.includes('file2.html')) {
-        startTimer();
+      if (count == 0 ){
+        document.getElementById("score").style.display = "block";
+        document.getElementById("table").style.display = "block";
+        document.getElementById("char").style.display = "none";
+        document.getElementById("buttoncont").style.display = "none";
+        document.getElementById("greetingcontainer").style.display = "none";
+        count++;
+        minigame();
+      } else {
+        document.getElementById("score").style.display = "block";
+        document.getElementById("table").style.display = "block";
+        document.getElementById("char").style.display = "none";
+        document.getElementById("buttoncont").style.display = "none";
+        document.getElementById("greetingcontainer").style.display = "none";
+     
       }
     }
-    
-  });
-  startTimer();
+  }
   
+  );
+
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+function minigame(){
   
-  //-------------------------------------------------------------------------------------------------------------
+ 
+
+  function reset(){
+    clearInterval(gameLoop);
+    snake = [{ row: 4, col: 4 }];
+    foods = [];
+    for (let i = 0; i < 3; i++) {
+      foods.push({ row: Math.floor(Math.random() * ROWS), col: Math.floor(Math.random() * COLS) });
+    }
+    dx = 1;
+    dy = 0;
+    score = 0;
+    document.getElementById("score").innerText = "Score: " + score; // Menambahkan baris ini
+    clearTable();
+    drawFoods();
+    drawSnake();
+    gameLoop = setInterval(update, 401);
+  }
+  
+
+const ROWS = 7;
+  const COLS = 15;
+  const table = document.getElementById("table");
+  let snake = [{ row: 4, col: 4 }];
+  let foods = [];
+  for (let i = 0; i < 3; i++) {
+    foods.push({ row: Math.floor(Math.random() * ROWS), col: Math.floor(Math.random() * COLS) });
+  }
+
+  let dx = 1;
+  let dy = 0;
+  let score = 0;
+
+  function drawTable() {
+    let html = "";
+    for (let row = 0; row < ROWS; row++) {
+      html += "<tr>";
+      for (let col = 0; col < COLS; col++) {
+        html += `<td id="cell-${row}-${col}"></td>`;
+      }
+      html += "</tr>";
+    }
+    table.innerHTML = html;
+  }
+
+  function drawSnake() {
+    snake.forEach((part) => {
+      const cell = document.getElementById(`cell-${part.row}-${part.col}`);
+      cell.classList.add("snake");
+    });
+  }
+
+  function drawFoods() {
+    foods.forEach((food) => {
+      const cell = document.getElementById(`cell-${food.row}-${food.col}`);
+      cell.classList.add("food");
+    });
+  }
+
+  function addFood() {
+    const newFood = { row: Math.floor(Math.random() * ROWS), col: Math.floor(Math.random() * COLS) };
+    foods.push(newFood);
+  }
+
+  function moveSnake() {
+    const head = { row: snake[0].row + dy, col: snake[0].col + dx };
+    if (head.col < 0) {
+      head.col = COLS - 1;
+    } else if (head.col >= COLS) {
+      head.col = 0;
+    }
+    if (head.row < 0) {
+      head.row = ROWS - 1;
+    } else if (head.row >= ROWS) {
+      head.row = 0;
+    }
+
+    foods.forEach((food, index) => {
+      if (head.row === food.row && head.col === food.col) {
+        foods.splice(index, 1);
+        score++;
+        document.getElementById("score").innerText = "Score: " + score;
+      }
+    });
+
+   
+    snake.pop();
+    snake.unshift(head);
+
+    if (foods.length === 0) {
+      addFood();
+    }
+
+    const headCell = document.getElementById(`cell-${head.row}-${head.col}`);
+    if (headCell.classList.contains("food")) {
+      headCell.classList.remove("food");
+    }
+  }
+
+  function clearTable() {
+    for (let row = 0; row < ROWS; row++) {
+      for (let col = 0; col < COLS; col++) {
+        const cell = document.getElementById(`cell-${row}-${col}`);
+        cell.classList.remove("snake", "food");
+      }
+    }
+  }
+
+
+  function update() {
+    clearTable();
+    drawFoods();
+    moveSnake();
+    drawSnake();
+  
+if (score === 5) {
+      clearInterval(gameLoop); // stop the game loop
+      alert("Selamat!");
+      document.getElementById("score").style.display = "none"; // hide the score
+      document.getElementById("table").style.display = "none"; // hide the table
+      document.getElementById("char").style.display = "block";
+      document.getElementById("buttoncont").style.display = "block";
+      document.getElementById("greetingcontainer").style.display = "none";
+      play++;
+      play++;
+      play++;
+      play++;
+      play++;
+      if (play > 10) {
+      play = 10;
+      }
+        
+      updatePlayBar();
+      
+      reset();
+    } 
+  }
+        
+        function onKeyDown(event) {
+          if (event.keyCode === 37 && dx === 0) {
+            dx = -1;
+            dy = 0;
+          } else if (event.keyCode === 38 && dy === 0) {
+            dx = 0;
+            dy = -1;
+          } else if (event.keyCode === 39 && dx === 0) {
+            dx = 1;
+            dy = 0;
+          } else if (event.keyCode === 40 && dy === 0) {
+            dx = 0;
+            dy = 1;
+          }
+        }
+
+      drawTable();
+      document.addEventListener("keydown", onKeyDown);
+      const gameLoop = setInterval(update, 400);
+
+      function removeFood() {
+  if (foods.length > 0) {
+    const removedFood = foods.shift();
+    const cell = document.getElementById(`cell-${removedFood.row}-${removedFood.col}`);
+    cell.classList.remove("food");
+  }
+}
+
+function updateFoods() {
+  if (foods.length === 0) {
+    addFood();
+  }
+  removeFood();
+}
+
+setInterval(updateFoods, 5500);
+setInterval(clearFood, 4000);
+
+}

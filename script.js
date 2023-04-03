@@ -4,11 +4,7 @@ window.addEventListener('load', () => {
 
   const audio = new Audio('asset/theme.mp3');
   audio.loop = true;
-  
-  const closeButton = document.querySelector('.close-btn');
-  closeButton.addEventListener('click', function() {
-    audio.play();
-  });
+
 
   if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile/i.test(navigator.userAgent)) {
       document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=portrait">');
